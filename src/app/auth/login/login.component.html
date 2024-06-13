@@ -34,8 +34,14 @@
                 </div>
                 <div class="form-group">
                   <button type="submit" 
-                      [disabled]="!authForm.valid"
-                      class="btn btn-primary submit-btn btn-block">Login</button>
+                      [disabled]="!authForm.valid || isLoading"
+                      class="btn btn-primary submit-btn btn-block">
+                      @if (isLoading) {
+                        <i class="fa fa-spin fa-sync"></i> Espere...
+                      } @else {
+                        Login
+                      }
+                  </button>
                 </div>
                 
                 

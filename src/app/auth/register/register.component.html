@@ -48,8 +48,14 @@
 
               <div class="form-group">
                 <button type="submit"
-                  [disabled]="!registerForm.valid"
-                  class="btn btn-primary submit-btn btn-block">Crear cuenta</button>
+                  [disabled]="!registerForm.valid || isLoading"
+                  class="btn btn-primary submit-btn btn-block">
+                  @if (isLoading) {
+                    <i class="fa fa-spin fa-sync"></i> Espere...
+                  } @else {
+                    Crear cuenta
+                  }
+                </button>
               </div>
               <div class="text-block text-center my-3">
                 <span class="text-small font-weight-semibold">ya tienes una cuenta?</span>
